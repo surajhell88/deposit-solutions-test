@@ -1,6 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
 
-render(<h1>Hello World!</h1>, document.getElementById("app"));
+import App from "./components/App";
+
+import "./styles/main.css";
+
+render(<App />, document.getElementById("app"));
 
 module.hot.accept();

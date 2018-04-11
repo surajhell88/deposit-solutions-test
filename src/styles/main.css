@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+.app > .container {
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
