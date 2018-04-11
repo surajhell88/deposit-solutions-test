@@ -1,0 +1,22 @@
+{
+  "name": "deposit-solutions-test",
+  "version": "0.0.1",
+  "description": "Coding Assignment",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surajhell88/deposit-solutions-test.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Suraj Jadhav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/surajhell88/deposit-solutions-test/issues"
+  },
+  "homepage": "https://github.com/surajhell88/deposit-solutions-test#readme"
+}
