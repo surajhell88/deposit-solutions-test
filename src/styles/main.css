@@ -1,9 +1,74 @@
-* {
-  box-sizing: border-box;
+.app .container {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  width: 980px;
 }
 
-.app > .container {
-  width: 980px;
-  margin-left: auto;
-  margin-right: auto;
+.app .no-decoration {
+  text-decoration: none;
+}
+
+.app .float-right {
+  float: right;
+}
+
+.app .float-left {
+  float: left;
+}
+
+.app .action-header:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.app .action-header:before {
+  display: table;
+  clear: both;
+}
+
+.app .issue-list {
+  padding-left: 0;
+  border: 1px solid #ddd;
+}
+
+.app .issue-item {
+  display: flex;
+  padding: 6px 12px;
+  border-top: 1px solid #ddd;
+}
+
+.app .issue-item:nth-child(1) {
+  border-top-color: transparent;
+}
+
+.app .issue-item:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.app .issue-status {
+  width: 15%;
+}
+
+.app .issue-text {
+  width: 70%;
+}
+
+.app .issue-comments {
+  width: 15%;
+}
+
+.app .pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.app .pg-btn {
+  padding: 6px 12px;
+}
+
+.app .pg-btn:hover {
+  background-color: #eff3f6;
 }

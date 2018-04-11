@@ -1,17 +1,15 @@
 import React from "react";
 
+import ActionHeader from "./ActionHeader";
+import IssueList from "./IssueList";
+import AppFooter from "./AppFooter";
+
 const App = props => (
   <div className="app">
     <div className="container">
-      <div>
-        <h3>Action Header</h3>
-      </div>
-      <div>
-        <h3>List of Issues</h3>
-      </div>
-      <div>
-        <h3>Pagination/Other Footer Actions</h3>
-      </div>
+      <ActionHeader />
+      <IssueList />
+      <AppFooter />
     </div>
   </div>
 );
