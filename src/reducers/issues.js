@@ -19,7 +19,8 @@ const issues = (state = {}, action) => {
     case RECIEVED:
       return {
         ...state,
-        data: action.payload
+        data: action.payload,
+        pagination: action.metaData
       };
     default:
       return state;

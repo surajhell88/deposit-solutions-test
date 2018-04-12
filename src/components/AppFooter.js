@@ -1,15 +1,10 @@
 import React from "react";
 
+import Pagination from "../containers/Pagination";
+
 const AppFooter = () => (
   <div className="app-footer">
-    <div className="pagination">
-      <a href="#" className="pg-btn no-decoration">
-        Prev
-      </a>
-      <a href="#" className="pg-btn no-decoration">
-        Next
-      </a>
-    </div>
+    <Pagination />
   </div>
 );
 

@@ -1,3 +1,5 @@
+import parseLinkHeader from "parse-link-header";
+
 import constants from "../constants";
 import api from "../utils/api";
 
@@ -13,18 +15,20 @@ export const errFetching = flag => ({
   errFetching: flag
 });
 
-export const recieved = payload => ({
+export const recieved = (payload, metaData) => ({
   type: ISSUES.RECIEVED,
-  payload
+  payload,
+  metaData
 });
 
-export const get = queryParams => dispatch => {
+export const get = (page = 1) => dispatch => {
   dispatch(fetching(true));
-  return api(`${END_POINTS.ISSUES}?${queryParams}`).then(response => {
-    // TODO: logger call
+  return api(`${END_POINTS.ISSUES}?page=${page}&per_page=20`).then(response => {
+    const { data, headers } = response;
     dispatch(fetching(false));
-    if (response.length) {
-      dispatch(recieved(response));
+    if (data.length) {
+      const parsedLink = parseLinkHeader(headers.get("Link"));
+      dispatch(recieved(data, { ...parsedLink, currentPage: page }));
     } else {
       dispatch(errFetching(true));
     }

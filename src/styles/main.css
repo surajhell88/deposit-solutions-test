@@ -63,10 +63,25 @@
 .app .pagination {
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 
 .app .pg-btn {
   padding: 6px 12px;
+  border: 1px solid #e1e4e8;
+  outline: 0;
+}
+
+.app .pg-btn.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.app .pg-btn.selected {
+  pointer-events: none;
+  background-color: blue;
+  color: white;
 }
 
 .app .pg-btn:hover {

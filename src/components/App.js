@@ -6,16 +6,8 @@ import IssueList from "../containers/IssueList";
 import AppFooter from "./AppFooter";
 
 class App extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      page: 1,
-      perPage: 20
-    };
-  }
   componentDidMount() {
-    const { page, perPage } = this.state;
-    this.props.getIssues(`page=${page}&per_page=${perPage}`);
+    this.props.getIssues();
   }
   render() {
     const { isFetchingIssues, errFetchingIssues } = this.props;
@@ -44,7 +36,8 @@ class App extends React.Component {
 App.propTypes = {
   isFetchingIssues: PropTypes.bool,
   errFetchingIssues: PropTypes.bool,
-  getIssues: PropTypes.func
+  getIssues: PropTypes.func,
+  currentPage: PropTypes.number
 };
 
 export default App;

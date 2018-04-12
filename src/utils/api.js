@@ -5,7 +5,8 @@ const pattern = /^((http|https):\/\/)/;
 
 const getUrl = url => (pattern.test(url) ? url : apiBaseUrl + url);
 
-const parseJSON = response => response.json();
+const parseJSON = response =>
+  response.json().then(data => ({ data, headers: response.headers }));
 
 export default (url, options = {}) => {
   const newOptions = Object.assign(

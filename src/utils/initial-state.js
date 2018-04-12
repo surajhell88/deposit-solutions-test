@@ -2,6 +2,7 @@ export default {
   issues: {
     fetching: false,
     errFetching: false,
-    data: []
+    data: [],
+    pagination: {}
   }
 };
