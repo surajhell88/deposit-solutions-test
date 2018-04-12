@@ -1,7 +1,7 @@
 import React from "react";
 
 import ActionHeader from "./ActionHeader";
-import IssueList from "./IssueList";
+import IssueList from "../containers/IssueList";
 import AppFooter from "./AppFooter";
 
 const App = props => (

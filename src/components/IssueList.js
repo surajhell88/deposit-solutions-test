@@ -1,27 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const listOfIssues = [
-  {
-    status: "open",
-    description: "Issue Text 1",
-    noOfComments: 2
-  },
-  {
-    status: "closed",
-    description: "Issue Text 2",
-    noOfComments: 0
-  },
-  {
-    status: "open",
-    description: "Issue Text 3",
-    noOfComments: 1
-  }
-];
-
-const IssueList = () => (
+const IssueList = ({ listOfIssues }) => (
   <ul className="issue-list">
     {listOfIssues.map((issue, i) => (
-      <li key={i} class="issue-item">
+      <li key={i} className="issue-item">
         <div className="issue-status">{issue.status}</div>
         <div className="issue-text">{issue.description}</div>
         {issue.noOfComments !== 0 && (
@@ -33,5 +16,9 @@ const IssueList = () => (
     ))}
   </ul>
 );
+
+IssueList.propTypes = {
+  listOfIssues: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default IssueList;
