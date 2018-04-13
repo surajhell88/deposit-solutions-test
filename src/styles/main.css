@@ -5,6 +5,16 @@
   width: 980px;
 }
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .app .container {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
 .app .no-decoration {
   text-decoration: none;
 }
