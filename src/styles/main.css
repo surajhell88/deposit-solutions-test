@@ -28,6 +28,13 @@
   clear: both;
 }
 
+.app .search-box {
+  width: 99%;
+  padding: 6px 0 6px 6px;
+  outline: none;
+  font-size: 1em;
+}
+
 .app .issue-list {
   padding-left: 0;
   border: 1px solid #ddd;

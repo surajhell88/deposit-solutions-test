@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import ActionHeader from "./ActionHeader";
+import ActionHeader from "../containers/ActionHeader";
 import IssueList from "../containers/IssueList";
 import AppFooter from "./AppFooter";
 

@@ -41,22 +41,26 @@ const Pagination = ({
       >
         Prev
       </button>
-      <button
-        className={`pg-btn ${currentPage === 1 ? "selected" : ""}`}
-        onClick={() => newPage(1)}
-      >
-        1
-      </button>
+      {currentPage !== noOfPages && (
+        <button
+          className={`pg-btn ${currentPage === 1 ? "selected" : ""}`}
+          onClick={() => newPage(1)}
+        >
+          1
+        </button>
+      )}
       {currentPage >= 5 && <button className="pg-btn disabled">...</button>}
       {numbers}
       {currentPage <= noOfPages - 4 &&
         noOfPages > 5 && <button className="pg-btn disabled">...</button>}
-      <button
-        className={`pg-btn ${currentPage === noOfPages ? "selected" : ""}`}
-        onClick={() => newPage(totalPages)}
-      >
-        {noOfPages}
-      </button>
+      {currentPage !== noOfPages && (
+        <button
+          className={`pg-btn ${currentPage === noOfPages ? "selected" : ""}`}
+          onClick={() => newPage(totalPages)}
+        >
+          {noOfPages}
+        </button>
+      )}
       <button
         className={`pg-btn ${currentPage === noOfPages ? "disabled" : ""}`}
         onClick={() => newPage(nextPage)}

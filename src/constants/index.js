@@ -7,6 +7,7 @@ export default Object.freeze({
     }
   },
   END_POINTS: {
-    ISSUES: "/repos/angular/angular.js/issues"
-  }
+    ISSUES: "/search/issues"
+  },
+  QUERY_PARAMS: "type:issue+repo:angular/angular.js+is:open"
 });
