@@ -13,6 +13,10 @@
     margin-top: 20px;
     width: 100%;
   }
+  .app .pg-btn-number,
+  .pg-btn-ellipses {
+    display: none;
+  }
 }
 
 .app .no-decoration {
