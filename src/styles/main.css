@@ -5,20 +5,6 @@
   width: 980px;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .app .container {
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 20px;
-    width: 100%;
-  }
-  .app .pg-btn-number,
-  .pg-btn-ellipses {
-    display: none;
-  }
-}
-
 .app .no-decoration {
   text-decoration: none;
 }
@@ -54,6 +40,10 @@
   border: 1px solid #ddd;
 }
 
+.app .issue-container {
+  width: 100%;
+}
+
 .app .issue-item {
   display: flex;
   padding: 6px 12px;
@@ -70,15 +60,12 @@
 }
 
 .app .issue-status {
-  width: 15%;
+  width: 24px;
+  padding-right: 6px;
 }
 
 .app .issue-text {
-  width: 70%;
-}
-
-.app .issue-comments {
-  width: 15%;
+  width: 80%;
 }
 
 .app .pagination {
@@ -107,4 +94,23 @@
 
 .app .pg-btn:hover {
   background-color: #eff3f6;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .app .container {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .app .pg-btn-number,
+  .pg-btn-ellipses {
+    display: none;
+  }
+  .app .issue-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

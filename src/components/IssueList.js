@@ -12,13 +12,21 @@ const IssueList = ({ listOfIssues }) => {
       <ul className="issue-list">
         {listOfIssues.map((issue, i) => (
           <li key={i} className="issue-item">
-            <div className="issue-status">{issue.state}</div>
-            <div className="issue-text">{issue.title}</div>
-            {issue.noOfComments !== 0 && (
-              <div className="issue-comments">
-                <div className="float-right">{issue.comments}</div>
+            <div className="issue-container">
+              <div className="issue-status float-left">
+                <i className="far fa-exclamation-circle" />
               </div>
-            )}
+              <div className="issue-text float-left">{issue.title}</div>
+              {issue.comments > 0 && (
+                <div className="issue-comments float-right">
+                  <div className="float-right">
+                    <i className="far fa-comment-alt" />
+                    &nbsp;
+                    {issue.comments}
+                  </div>
+                </div>
+              )}
+            </div>
           </li>
         ))}
       </ul>
