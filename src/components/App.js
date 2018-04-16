@@ -16,12 +16,12 @@ class App extends React.Component {
         <div className="container">
           <ActionHeader />
           {isFetchingIssues ? (
-            <div className="issues-loading">
-              <h4>Loading...</h4>
+            <div className="message-box">
+              <h3>Loading...</h3>
             </div>
           ) : errFetchingIssues ? (
-            <div className="issues-loading">
-              <h4>Error while loading data</h4>
+            <div className="message-box">
+              <h3>Error while loading data</h3>
             </div>
           ) : (
             <IssueList />

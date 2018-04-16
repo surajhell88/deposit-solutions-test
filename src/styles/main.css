@@ -8,6 +8,11 @@
   width: 980px;
 }
 
+.app .message-box {
+  display: flex;
+  justify-content: center;
+}
+
 .app .no-decoration {
   text-decoration: none;
 }
@@ -18,17 +23,6 @@
 
 .app .float-left {
   float: left;
-}
-
-.app .action-header:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.app .action-header:before {
-  display: table;
-  clear: both;
 }
 
 .app .form-search {

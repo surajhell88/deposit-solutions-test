@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const IssueList = ({ listOfIssues }) => {
   let issueList = (
-    <div className="issues-loading">
-      <h4>No Issues Found</h4>
+    <div className="message-box">
+      <h3>No Issues Found</h3>
     </div>
   );
   if (listOfIssues.length) {
