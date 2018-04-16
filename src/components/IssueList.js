@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 const IssueList = ({ listOfIssues }) => {
@@ -13,19 +13,19 @@ const IssueList = ({ listOfIssues }) => {
         {listOfIssues.map((issue, i) => (
           <li key={i} className="issue-item">
             <div className="issue-container">
-              <div className="issue-status float-left">
+              <div className="issue-status">
                 <i className="far fa-exclamation-circle" />
               </div>
-              <div className="issue-text float-left">{issue.title}</div>
-              {issue.comments > 0 && (
-                <div className="issue-comments float-right">
-                  <div className="float-right">
+              <div className="issue-text">{issue.title}</div>
+              <div className="issue-comments float-right">
+                {issue.comments > 0 && (
+                  <Fragment>
                     <i className="far fa-comment-alt" />
                     &nbsp;
                     {issue.comments}
-                  </div>
-                </div>
-              )}
+                  </Fragment>
+                )}
+              </div>
             </div>
           </li>
         ))}

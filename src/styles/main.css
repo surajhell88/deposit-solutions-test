@@ -1,6 +1,9 @@
+.app {
+  display: flex;
+  justify-content: center;
+}
+
 .app .container {
-  margin-right: auto;
-  margin-left: auto;
   margin-top: 20px;
   width: 980px;
 }
@@ -28,8 +31,12 @@
   clear: both;
 }
 
+.app .form-search {
+  display: flex;
+}
+
 .app .search-box {
-  width: 99%;
+  flex-grow: 1;
   padding: 6px 0 6px 6px;
   outline: none;
   font-size: 1em;
@@ -41,7 +48,10 @@
 }
 
 .app .issue-container {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .app .issue-item {
@@ -60,12 +70,11 @@
 }
 
 .app .issue-status {
-  width: 24px;
-  padding-right: 6px;
+  padding-right: 12px;
 }
 
 .app .issue-text {
-  width: 80%;
+  flex-grow: 1;
 }
 
 .app .pagination {
@@ -107,6 +116,9 @@
   .app .pg-btn-number,
   .pg-btn-ellipses {
     display: none;
+  }
+  .app .issue-item {
+    display: block;
   }
   .app .issue-text {
     white-space: nowrap;
