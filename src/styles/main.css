@@ -45,6 +45,7 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 1.5em;
+  background-color: transparent;
   order: -1;
   padding: 0.75em;
   text-indent: -999px;
@@ -88,6 +89,7 @@
   border: var(--gray-border);
   outline: 0;
   border-right: 0;
+  background-color: transparent;
 }
 
 .app .pg-btn:last-of-type {
@@ -123,7 +125,6 @@
     display: block;
   }
   .app .issue-text {
-    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
