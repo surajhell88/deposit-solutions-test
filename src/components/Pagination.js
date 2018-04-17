@@ -43,7 +43,7 @@ const Pagination = ({
       >
         Prev
       </button>
-      {currentPage !== noOfPages && (
+      {noOfPages !== 1 && (
         <button
           className={`pg-btn pg-btn-number ${
             currentPage === 1 ? "selected" : ""
@@ -61,7 +61,7 @@ const Pagination = ({
         noOfPages > 5 && (
           <button className="pg-btn pg-btn-ellipses disabled">...</button>
         )}
-      {currentPage !== noOfPages && (
+      {noOfPages !== 1 && (
         <button
           className={`pg-btn pg-btn-number ${
             currentPage === noOfPages ? "selected" : ""
