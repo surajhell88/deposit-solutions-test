@@ -36,8 +36,13 @@ class App extends React.Component {
 App.propTypes = {
   isFetchingIssues: PropTypes.bool,
   errFetchingIssues: PropTypes.bool,
-  getIssues: PropTypes.func,
-  currentPage: PropTypes.number
+  getIssues: PropTypes.func
+};
+
+App.defaultProps = {
+  isFetchingIssues: false,
+  errFetchingIssues: false,
+  getIssues: () => {}
 };
 
 export default App;
