@@ -7,7 +7,9 @@
     "start": "node dev-server.js",
     "build":
       "npm run clean && NODE_ENV=production webpack --config webpack.config.js --mode production",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test":
+      "NODE_ENV=production mocha --reporter spec test-setup.js './src/**/*.test.js' --require babel-core/register --recursive"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,12 @@
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
+    "babel-register": "6.26.0",
     "css-loader": "0.28.11",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "expect": "22.4.3",
+    "mocha": "5.1.0",
     "rimraf": "2.6.2",
     "style-loader": "0.20.3",
     "webpack": "4.5.0",
