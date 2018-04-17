@@ -24,14 +24,15 @@ class ActionHeader extends React.Component {
         >
           <input
             className="search-box"
-            type="text"
+            type="search"
             value={this.state.search}
             onChange={e => this.setState({ search: e.target.value })}
-            placeholder="Search and hit Enter"
+            placeholder="Search and hit &#9166;"
             name="search-box"
             autoComplete="off"
             ref={this.inputRef}
           />
+          <input type="submit" value="Search" />
         </form>
       </div>
     );
