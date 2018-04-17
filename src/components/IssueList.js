@@ -14,7 +14,7 @@ const IssueList = ({ listOfIssues }) => {
           <li key={i} className="issue-item">
             <div className="issue-container">
               <div className="issue-status">
-                <i className="far fa-exclamation-circle" />
+                <i className="fas fa-exclamation-circle" />
               </div>
               <div className="issue-text">{issue.title}</div>
               {issue.comments > 0 && (

@@ -8,6 +8,7 @@ import App from "./containers/App";
 import initialAppState from "./utils";
 import appReducer from "./reducers";
 
+import "./assets/css/fontawesome-all.min.css";
 import "./styles/main.css";
 
 const store = createStore(appReducer, initialAppState, applyMiddleware(thunk));
