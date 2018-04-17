@@ -23,11 +23,4 @@ describe("ActionHeader Component", () => {
     expect(enzymeWrapper.find("form.form-search").length).toBe(1);
     expect(enzymeWrapper.find("input.search-box").length).toBe(1);
   });
-  it("should call submit", () => {
-    const searchIssues = sinon.spy();
-    const { enzymeWrapper } = setup({ searchIssues });
-    const searchForm = enzymeWrapper.find("form.form-search");
-    searchForm.simulate("submit");
-    expect(searchIssues.callCount).toBe(1);
-  });
 });

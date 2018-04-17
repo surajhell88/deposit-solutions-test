@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import getQueryParams from "../utils/query-params";
 
 class ActionHeader extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      search: ""
+      search: getQueryParams("q")
     };
     this.inputRef = React.createRef();
   }
@@ -15,20 +16,14 @@ class ActionHeader extends React.Component {
   render() {
     return (
       <div className="action-header">
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            this.props.searchIssues(this.state.search);
-          }}
-          className="form-search apply-flex gray-border"
-        >
+        <form className="form-search apply-flex gray-border">
           <input
             className="search-box apply-flex-one no-border"
             type="search"
             value={this.state.search}
             onChange={e => this.setState({ search: e.target.value })}
             placeholder="Search and hit &#9166;"
-            name="search-box"
+            name="q"
             autoComplete="off"
             ref={this.inputRef}
           />
@@ -38,9 +33,5 @@ class ActionHeader extends React.Component {
     );
   }
 }
-
-ActionHeader.propTypes = {
-  searchIssues: PropTypes.func
-};
 
 export default ActionHeader;

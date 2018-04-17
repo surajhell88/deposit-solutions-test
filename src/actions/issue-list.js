@@ -1,5 +1,6 @@
 import parseLinkHeader from "parse-link-header";
 
+import getQueryParams from "../utils/query-params";
 import constants from "../constants";
 import api from "../utils/api";
 
@@ -21,8 +22,9 @@ export const recieved = (payload, metaData) => ({
   metaData
 });
 
-export const get = (page = 1, query = "") => dispatch => {
+export const get = (page = 1) => dispatch => {
   dispatch(fetching(true));
+  const query = getQueryParams("q");
   const pageParams = `page=${page}&per_page=25`;
   let endpoint = `${
     END_POINTS.ISSUES
