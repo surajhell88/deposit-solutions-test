@@ -1,3 +1,7 @@
+:root {
+  --gray-border: 1px solid #ddd;
+}
+
 .app .container {
   margin-top: 20px;
   width: 980px;
@@ -19,15 +23,18 @@
   justify-content: center;
 }
 
+.no-border {
+  border: 0;
+}
+
 .app .form-search {
-  border: 1px solid #ddd;
+  border: var(--gray-border);
 }
 
 .app .search-box {
   padding: 6px 6px 6px 0;
   outline: none;
   font-size: 1em;
-  border: 0;
 }
 
 .app input[type="submit"] {
@@ -39,12 +46,11 @@
   padding: 0.75em;
   text-indent: -999px;
   width: 3em;
-  border: 0;
 }
 
 .app .issue-list {
   padding-left: 0;
-  border: 1px solid #ddd;
+  border: var(--gray-border);
 }
 
 .app .issue-container {
@@ -54,7 +60,7 @@
 
 .app .issue-item {
   padding: 6px 12px;
-  border-top: 1px solid #ddd;
+  border-top: var(--gray-border);
 }
 
 .app .issue-item:nth-child(1) {
@@ -76,7 +82,7 @@
 
 .app .pg-btn {
   padding: 6px 12px;
-  border: 1px solid #e1e4e8;
+  border: var(--gray-border);
   outline: 0;
 }
 
