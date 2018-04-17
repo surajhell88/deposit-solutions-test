@@ -23,7 +23,7 @@ class ActionHeader extends React.Component {
           className="form-search apply-flex"
         >
           <input
-            className="search-box"
+            className="search-box apply-flex-one"
             type="search"
             value={this.state.search}
             onChange={e => this.setState({ search: e.target.value })}

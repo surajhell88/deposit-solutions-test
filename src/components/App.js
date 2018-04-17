@@ -12,15 +12,15 @@ class App extends React.Component {
   render() {
     const { isFetchingIssues, errFetchingIssues } = this.props;
     return (
-      <div className="app apply-flex">
+      <div className="app apply-flex justify-center">
         <div className="container">
           <ActionHeader />
           {isFetchingIssues ? (
-            <div className="message-box apply-flex">
+            <div className="message-box apply-flex justify-center">
               <h3>Loading...</h3>
             </div>
           ) : errFetchingIssues ? (
-            <div className="message-box apply-flex">
+            <div className="message-box apply-flex justify-center">
               <h3>Error while loading data</h3>
             </div>
           ) : (

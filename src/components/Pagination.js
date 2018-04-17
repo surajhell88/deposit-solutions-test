@@ -36,7 +36,7 @@ const Pagination = ({
     }
   }
   return (
-    <div className="pagination apply-flex">
+    <div className="pagination apply-flex justify-center">
       <button
         className={`pg-btn pg-btn-prev ${currentPage === 1 ? "disabled" : ""}`}
         onClick={() => newPage(prevPage)}

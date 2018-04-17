@@ -1,14 +1,6 @@
-.app {
-  justify-content: center;
-}
-
 .app .container {
   margin-top: 20px;
   width: 980px;
-}
-
-.app .message-box {
-  justify-content: center;
 }
 
 .app .no-decoration {
@@ -19,12 +11,19 @@
   display: flex;
 }
 
+.apply-flex-one {
+  flex: 1;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 .app .form-search {
   border: 1px solid #ddd;
 }
 
 .app .search-box {
-  flex-grow: 1;
   padding: 6px 6px 6px 0;
   outline: none;
   font-size: 1em;
@@ -51,7 +50,6 @@
 .app .issue-container {
   align-items: center;
   justify-content: space-between;
-  flex-grow: 1;
 }
 
 .app .issue-item {
@@ -72,12 +70,7 @@
   padding-right: 12px;
 }
 
-.app .issue-text {
-  flex-grow: 1;
-}
-
 .app .pagination {
-  justify-content: center;
   user-select: none;
 }
 
