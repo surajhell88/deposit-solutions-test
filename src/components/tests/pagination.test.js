@@ -1,41 +1,30 @@
 import expect from "expect";
-import React from "react";
 import { shallow } from "enzyme";
 import sinon from "sinon";
 
+import testUtil from "../../utils/test-util";
 import Pagination from "../Pagination";
-
-function setup(customProps) {
-  const props = {
-    ...customProps
-  };
-  const enzymeWrapper = shallow(<Pagination {...props} />);
-  return {
-    props,
-    enzymeWrapper
-  };
-}
 
 describe("Pagination Component", () => {
   it("should render self", () => {
-    const { enzymeWrapper } = setup();
+    const { enzymeWrapper } = testUtil(Pagination, true);
     expect(enzymeWrapper.find("div.pagination").length).toBe(1);
   });
   it("should render prev and next buttons", () => {
-    const { enzymeWrapper } = setup();
+    const { enzymeWrapper } = testUtil(Pagination, true);
     expect(enzymeWrapper.find("button.pg-btn-prev").length).toBe(1);
     expect(enzymeWrapper.find("button.pg-btn-next").length).toBe(1);
   });
   it("should render 3 buttons with page numbers", () => {
     const totalPages = 3;
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages
     });
     expect(enzymeWrapper.find("button.pg-btn-number").length).toBe(totalPages);
   });
   it("should have button with text 2 as selected", () => {
     const currentPage = 2;
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages: 3,
       currentPage
     });
@@ -44,20 +33,20 @@ describe("Pagination Component", () => {
     expect(selectedBtn.text()).toBe(currentPage + "");
   });
   it("should not render ellipses when totalPages less than 5", () => {
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages: 3
     });
     expect(enzymeWrapper.find("button.pg-btn-ellipses").length).toBe(0);
   });
   it("should render ellipses when totalPages more than 5", () => {
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages: 6
     });
     expect(enzymeWrapper.find("button.pg-btn-ellipses").length).toBe(1);
   });
   it("should call newPage when page button is clicked", () => {
     const newPage = sinon.spy();
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages: 6,
       newPage
     });
@@ -66,7 +55,7 @@ describe("Pagination Component", () => {
     expect(newPage.callCount).toBe(1);
   });
   it("should have prev disabled on first page", () => {
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages: 6,
       currentPage: 1
     });
@@ -74,7 +63,7 @@ describe("Pagination Component", () => {
     expect(disabledPrevBtn.length).toBe(1);
   });
   it("should have next disabled on last page", () => {
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(Pagination, true, {
       totalPages: 6,
       currentPage: 6
     });

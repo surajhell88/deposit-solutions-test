@@ -1,19 +1,8 @@
 import expect from "expect";
-import React from "react";
 import { shallow } from "enzyme";
 
+import testUtil from "../../utils/test-util";
 import IssueList from "../IssueList";
-
-function setup(customProps) {
-  const props = {
-    ...customProps
-  };
-  const enzymeWrapper = shallow(<IssueList {...props} />);
-  return {
-    props,
-    enzymeWrapper
-  };
-}
 
 const dummyIssue = {
   title: "Dummy Title",
@@ -29,7 +18,7 @@ const listOfIssues = [dummyIssue];
 
 describe("IssueList Component", () => {
   it("should render self", () => {
-    const { enzymeWrapper } = setup({ listOfIssues });
+    const { enzymeWrapper } = testUtil(IssueList, true, { listOfIssues });
     expect(enzymeWrapper.find("ul.issue-list").length).toBe(1);
     expect(enzymeWrapper.find("div.issue-text").text()).toBe(dummyIssue.title);
     expect(
@@ -40,13 +29,13 @@ describe("IssueList Component", () => {
     ).toBe(dummyIssue.comments + "");
   });
   it("should render no data", () => {
-    const { enzymeWrapper } = setup({ listOfIssues: [] });
+    const { enzymeWrapper } = testUtil(IssueList, true, { listOfIssues: [] });
     const messageBox = enzymeWrapper.find("div.message-box");
     expect(messageBox.length).toBe(1);
     expect(messageBox.find("h3").text()).toBe("No Issues Found");
   });
   it("should render with no comments", () => {
-    const { enzymeWrapper } = setup({
+    const { enzymeWrapper } = testUtil(IssueList, true, {
       listOfIssues: [dummyIssueWithNoComments]
     });
     expect(enzymeWrapper.find("div.issue-comments").length).toBe(0);
