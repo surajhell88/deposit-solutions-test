@@ -38,7 +38,7 @@ const Pagination = ({
   return (
     <div className="pagination">
       <button
-        className={`pg-btn ${currentPage === 1 ? "disabled" : ""}`}
+        className={`pg-btn pg-btn-prev ${currentPage === 1 ? "disabled" : ""}`}
         onClick={() => newPage(prevPage)}
       >
         Prev
@@ -72,7 +72,9 @@ const Pagination = ({
         </button>
       )}
       <button
-        className={`pg-btn ${currentPage === noOfPages ? "disabled" : ""}`}
+        className={`pg-btn pg-btn-next ${
+          currentPage === noOfPages ? "disabled" : ""
+        }`}
         onClick={() => newPage(nextPage)}
       >
         Next
