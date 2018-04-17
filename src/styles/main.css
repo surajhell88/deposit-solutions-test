@@ -1,5 +1,8 @@
 :root {
-  --gray-border: 1px solid #ddd;
+  --gray-color: #ddd;
+  --primary-color: #43b5ff;
+  --secondary-color: #43b5ff30;
+  --gray-border: 1px solid var(--gray-color);
 }
 
 .app .container {
@@ -68,7 +71,7 @@
 }
 
 .app .issue-item:hover {
-  background-color: #ddd;
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
@@ -84,22 +87,27 @@
   padding: 6px 12px;
   border: var(--gray-border);
   outline: 0;
+  border-right: 0;
+}
+
+.app .pg-btn:last-of-type {
+  border-right: var(--gray-border);
 }
 
 .app .pg-btn.disabled {
   pointer-events: none;
-  opacity: 0.3;
+  color: var(--gray-color);
   cursor: not-allowed;
 }
 
 .app .pg-btn.selected {
   pointer-events: none;
-  background-color: blue;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .app .pg-btn:hover {
-  background-color: #eff3f6;
+  background-color: var(--gray-color);
 }
 
 @media only screen and (max-width: 768px) {

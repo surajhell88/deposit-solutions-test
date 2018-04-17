@@ -54,12 +54,16 @@ const Pagination = ({
         </button>
       )}
       {currentPage >= 5 && (
-        <button className="pg-btn pg-btn-ellipses disabled">...</button>
+        <button className="pg-btn pg-btn-ellipses disabled">
+          <i className="fas fa-ellipsis-h" />
+        </button>
       )}
       {numbers}
       {currentPage <= noOfPages - 4 &&
         noOfPages > 5 && (
-          <button className="pg-btn pg-btn-ellipses disabled">...</button>
+          <button className="pg-btn pg-btn-ellipses disabled">
+            <i className="fas fa-ellipsis-h" />
+          </button>
         )}
       {noOfPages !== 1 && (
         <button
