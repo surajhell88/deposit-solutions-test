@@ -20,7 +20,7 @@ class ActionHeader extends React.Component {
             e.preventDefault();
             this.props.searchIssues(this.state.search);
           }}
-          className="form-search"
+          className="form-search apply-flex"
         >
           <input
             className="search-box"

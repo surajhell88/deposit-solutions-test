@@ -1,5 +1,4 @@
 .app {
-  display: flex;
   justify-content: center;
 }
 
@@ -9,7 +8,6 @@
 }
 
 .app .message-box {
-  display: flex;
   justify-content: center;
 }
 
@@ -17,16 +15,11 @@
   text-decoration: none;
 }
 
-.app .float-right {
-  float: right;
-}
-
-.app .float-left {
-  float: left;
+.apply-flex {
+  display: flex;
 }
 
 .app .form-search {
-  display: flex;
   border: 1px solid #ddd;
 }
 
@@ -56,14 +49,12 @@
 }
 
 .app .issue-container {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
 }
 
 .app .issue-item {
-  display: flex;
   padding: 6px 12px;
   border-top: 1px solid #ddd;
 }
@@ -77,10 +68,6 @@
   cursor: pointer;
 }
 
-.app .issue-comments {
-  display: flex;
-}
-
 .app .issue-status {
   padding-right: 12px;
 }
@@ -90,7 +77,6 @@
 }
 
 .app .pagination {
-  display: flex;
   justify-content: center;
   user-select: none;
 }
